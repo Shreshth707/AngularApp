@@ -1,0 +1,17 @@
+
+.jumbotron {
+    background: #9575CD;
+    color:floralwhite;
+    min-height: 150px;
+}
+
+.container{
+    background-color: rgb(180, 148, 209);
+    margin:0px;
+}
+.jumbotronContent{
+    margin:10px
+}
+.active{
+    background-color: #9575CE;
+}
