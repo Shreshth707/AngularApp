@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Components
+import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { HeaderComponent } from './header/header.component';
@@ -10,30 +11,32 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
 
 
-import { MatGridListModule } from '@angular/material/grid-list'; 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatListModule } from '@angular/material/list';
-
+//Services
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
 
-import 'hammerjs';
-
-import { AppRoutingModule } from './app-routing/app-routing.module';
-import { LoginComponent } from './login/login.component';
+//Material Design
+import { MatGridListModule } from '@angular/material/grid-list'; 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
+import { MatSelectModule, MatSlideToggleModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -50,18 +53,21 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatGridListModule,
-    MatToolbarModule,
     FlexLayoutModule,
+    FormsModule,
+    AppRoutingModule,
     MatCardModule,
     MatButtonModule,
     MatListModule,
-    AppRoutingModule,
+    MatGridListModule,
+    MatToolbarModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    FormsModule
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     LoginComponent
