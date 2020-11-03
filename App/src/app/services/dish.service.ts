@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { DISHES } from '../shared/dishes';
 import { Dish } from '../shared/dish';
+import { Comment } from '../shared/comment';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +29,9 @@ export class DishService {
   getDishIds(): Observable <string[] | any >{
     return of (DISHES.map(dish => dish.id));
   }
+
+  addComment(dish:Dish,comment:Comment){
+    dish.comments.push(comment);
+  }
+
 }
