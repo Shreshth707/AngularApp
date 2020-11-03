@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 //Components
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { baseURL } from './shared/baseURL';
 
 //Material Design
 import { MatGridListModule } from '@angular/material/grid-list'; 
@@ -54,6 +56,7 @@ import 'hammerjs';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FlexLayoutModule,
     FormsModule,
     AppRoutingModule,
@@ -75,7 +78,9 @@ import 'hammerjs';
   entryComponents: [
     LoginComponent
   ],
-  providers: [DishService,PromotionService,LeaderService],
+  providers: [DishService,PromotionService,LeaderService,
+    {provide: 'BaseURL', useValue: baseURL}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

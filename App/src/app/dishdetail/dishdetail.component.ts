@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild } from '@angular/core';
+import { Component, OnInit ,ViewChild, Inject } from '@angular/core';
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -38,7 +38,8 @@ export class DishdetailComponent implements OnInit {
   };
 
   constructor(private dishService:DishService, private route:ActivatedRoute,
-     private location:Location, private fb:FormBuilder) { 
+     private location:Location, private fb:FormBuilder,
+     @Inject('BaseURL') private baseURL) { 
        this.createForm();
      }
 
@@ -52,6 +53,7 @@ export class DishdetailComponent implements OnInit {
     const index = this.dishIds.indexOf(dishId);
     this.prev = this.dishIds[(this.dishIds.length + index - 1) % this.dishIds.length];
     this.next = this.dishIds[(this.dishIds.length + index + 1) % this.dishIds.length];
+    console.log(this.prev + " " +this.next);
   }
 
   goBack():void{
