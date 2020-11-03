@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { DISHES } from '../shared/dishes';
 import { Dish } from '../shared/dish';
 import { Comment } from '../shared/comment';
 import { Observable, of } from 'rxjs';
